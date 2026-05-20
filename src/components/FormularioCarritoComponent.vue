@@ -56,10 +56,10 @@
                 <input type="number" id="cantidadProducto" name="cantidadProducto" v-model="cantidadProducto" required>
             </div> <br>
 
-            <button type="submit">Guardar</button><br>
-            <button type="button" @click="eliminar" >Eliminar</button><br>
-            <button type="button" @click="actualizar">Actualizar</button><br>
-            <button type="button" @click="consultar">Consultar</button><br>
+            <button type="submit">Agregar producto al carrito</button><br>
+            <!--<button type="button" @click="eliminar" >Eliminar</button><br>-->
+            <!--<button type="button" @click="actualizar">Actualizar</button><br>-->
+            <!--<button type="button" @click="consultar">Consultar</button><br>-->
         </form>
 
     </div>
