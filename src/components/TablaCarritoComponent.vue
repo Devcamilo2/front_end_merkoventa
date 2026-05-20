@@ -64,7 +64,7 @@
                     <td>{{ carrito.nombreProducto }}</td>
                     <td>{{ carrito.precioProducto }}</td>
                     <td>{{ carrito.cantidadProducto }}</td>
-                    <td>{{ carrito.subtotal }}</td>
+                    <td>{{ carrito.subtotalCarrito }}</td>
                     <td><button @click="eliminarProductos(carrito.id)">Eliminar</button></td>
                 </tr>
             </tbody>
