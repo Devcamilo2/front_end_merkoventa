@@ -5,8 +5,7 @@
         data(){
 
             return {
-                nombreProducto : "",
-                precioProducto : 0,
+                idProducto : 0,
                 cantidadProducto : 0
             };
         },
@@ -14,15 +13,13 @@
         methods : {
             guardar(){
                 axios.post("http://localhost:8080/carritos/agregarcarrito" , {
-                    nombreProducto : this.nombreProducto,
-                    precioProducto : this.precioProducto,
+                    idProducto : this.idProducto,
                     cantidadProducto : this.cantidadProducto
                 })
                 .then((response) => {
                     console.log("Producto registrado con exito" , response.data);
                     alert("Producto registrado");
-                    this.nombreProducto = "",
-                    this.precioProducto = 0,
+                    this.idProducto = 0,
                     this.cantidadProducto = 0,
                     this.$emit("actualizar-tabla");
                 })
@@ -42,18 +39,13 @@
         <form action="" id="carrito-form" @submit.prevent="guardar">
 
             <div class="form-group">
-                <label for="nombreProducto">Nombre del producto</label>
-                <input type="text" id="nombreProducto" name="nombreProducto" v-model="nombreProducto" required>
-            </div> <br>
-
-            <div class="form-group">
-                <label for="precioProducto">Precio del producto</label>
-                <input type="number" id="precioProducto" name="precioProducto" v-model="precioProducto" required>
+                <label for="idProducto">Id del producto</label>
+                <input type="number" id="idProducto" name="idProducto" v-model.number="idProducto" required>
             </div> <br>
 
             <div class="form-group">
                 <label for="cantidadProducto">Cantidad del producto</label>
-                <input type="number" id="cantidadProducto" name="cantidadProducto" v-model="cantidadProducto" required>
+                <input type="number" id="cantidadProducto" name="cantidadProducto" v-model.number="cantidadProducto" required>
             </div> <br>
 
             <button type="submit">Agregar producto al carrito</button><br>
